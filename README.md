@@ -6,12 +6,26 @@ Injeta um script na página da DIO, criando um botão que permite obter o **"lin
 <img src="https://user-images.githubusercontent.com/28885835/168691283-040d5776-850a-4873-97b8-898029835777.png" style="width: 730px;" />
 
 
+## Compatibilidade
+Testado com:
+* Chrome;
+* Opera;
+* Opera GX;
+* Brave;
+* Edge; 
+
 
 ## Instalar
 1. acesse chrome://extensions/
 2. Ative modo desenvolvedor
 3. Clique em **Carregar expandida**
 4. Selecione o diretório da extensão
+
+**Obs.:** Para ativar o modo desenvolvedor no Edge, acesse edge://extensions/, depois clique no menu na lateral esquerda
+
+Após ativar o modo desenvolvedor irá aparecer os icones
+
+![image](https://user-images.githubusercontent.com/28885835/168694726-d13a8c74-8566-41a0-9d1b-6d21c7bc8e63.png)
 
 
 ## Como utilizar
