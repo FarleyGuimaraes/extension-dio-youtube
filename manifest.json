@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "DIO Youtube",
+    "description": "Obter link do youtube nos videos da DIO",
+    "version": "1.0",
+    "author": "Farley Guimarães",
+    "action": {
+   	    "default_icon": {
+            "16": "img/logo-minimized.png",
+            "24": "img/logo-minimized.png",
+            "32": "img/logo-minimized.png",
+            "48": "img/logo-minimized.png",
+            "128": "img/logo-minimized.png"
+        }
+    },
+    "icons":{
+        "16": "img/images.png",
+        "24": "img/images.png",
+        "32": "img/images.png",
+        "48": "img/images.png",
+        "128": "img/images.png"
+    },
+    "host_permissions": ["https://web.dio.me/"],
+    "content_scripts": [{
+        "matches": ["https://web.dio.me/*"],
+        "js": ["js/script.js"],
+        "css": ["styles/style.css"],
+        "run_at": "document_end"
+    }]
+}
