@@ -16,10 +16,11 @@ Testado com:
 
 
 ## Instalar
-1. acesse chrome://extensions/
-2. Ative modo desenvolvedor
-3. Clique em **Carregar expandida**
-4. Selecione o diretório da extensão
+1. Faça o clone do repositório
+2. acesse chrome://extensions/
+3. Ative modo desenvolvedor
+4. Clique em **Carregar expandida**
+5. Selecione o diretório da extensão
 
 **Obs.:** Para ativar o modo desenvolvedor no Edge, acesse edge://extensions/, depois clique no menu na lateral esquerda
 
