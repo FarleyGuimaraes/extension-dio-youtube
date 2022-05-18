@@ -38,14 +38,16 @@ Após ativar o modo desenvolvedor irá aparecer os icones
 
 
 ## Limitações
-1. Funciona apenas nos vídeos de **Cursos** e **Desafios de Projetos**
+1. Funciona apenas nos vídeos de **Cursos**, **Desafios de Projetos** e **Lives**
 ```js
 setInterval(() => {
   let curse = document.location.href.includes("https://web.dio.me/course/");
   let project = document.location.href.includes("https://web.dio.me/project/");
-  if (curse || project) {
+  let live = document.location.href.includes("https://web.dio.me/live/");
+  if (curse || project || live) {
     if (document.querySelector("#btnYoutube") == null) {
-      createButtonYoutube();
+      document.querySelector(".card-header").insertAdjacentHTML("afterend", divContainerButtonYoutube.outerHTML);
+      document.querySelector("#btnYoutube").addEventListener('click',getLinkYoutube);
     }
   }
 }, 3000);
