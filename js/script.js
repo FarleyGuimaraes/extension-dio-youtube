@@ -21,7 +21,8 @@ const divContainerButtonYoutube = (function(){
 setInterval(() => {
   let curse = document.location.href.includes("https://web.dio.me/course/");
   let project = document.location.href.includes("https://web.dio.me/project/");
-  if (curse || project) {
+  let live= document.location.href.includes("https://web.dio.me/live/");
+  if (curse || project || live) {
     if (document.querySelector("#btnYoutube") == null) {
       document.querySelector(".card-header").insertAdjacentHTML("afterend", divContainerButtonYoutube.outerHTML);
       document.querySelector("#btnYoutube").addEventListener('click',getLinkYoutube);
