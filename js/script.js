@@ -1,20 +1,6 @@
 "use strict";
 
-setInterval(() => {
-  let curse = document.location.href.includes("https://web.dio.me/course/");
-  let project = document.location.href.includes("https://web.dio.me/project/");
-  if (curse || project) {
-    if (document.querySelector("#btnYoutube") == null) {
-      createButtonYoutube();
-    }
-  }
-}, 3000);
-
-
-
-function createButtonYoutube() {
-  let cardHeader = document.querySelector(".card-header");
-  
+const divContainerButtonYoutube = (function(){
   let divContainer = document.createElement("div");
   divContainer.setAttribute("id", "container-btnYoutube");
 
@@ -22,33 +8,60 @@ function createButtonYoutube() {
   button.setAttribute("id", "btnYoutube");
   button.classList.add("btn-block", "font-weight-bold", "btn", "btn-danger");
   button.textContent = "Assistir no Youtube";
+  //button.addEventListener("click", getLinkYoutube);
   
   divContainer.appendChild(button);
-  cardHeader.insertAdjacentHTML("afterend", divContainer.outerHTML);
 
-  let buttonYoutube = document.querySelector("#btnYoutube");
-  buttonYoutube.addEventListener("click", getLinkYoutube);
+  return divContainer;
 
-}
+})()
 
+
+
+setInterval(() => {
+  let curse = document.location.href.includes("https://web.dio.me/course/");
+  let project = document.location.href.includes("https://web.dio.me/project/");
+  if (curse || project) {
+    if (document.querySelector("#btnYoutube") == null) {
+      document.querySelector(".card-header").insertAdjacentHTML("afterend", divContainerButtonYoutube.outerHTML);
+      document.querySelector("#btnYoutube").addEventListener('click',getLinkYoutube);
+    }
+  }
+}, 3000);
+ 
 
 
 function getLinkYoutube() {
   let iframeElement = document.querySelectorAll('iframe[id^="ytc"]')[0];
   if (iframeElement !== undefined) {
-    let srcIframe = iframeElement.src;
-    let linkEmbed = srcIframe.split("?")[0];
-    let link = linkEmbed.replace(
-      "https://www.youtube.com/embed/",
-      "https://youtu.be/"
-    );
+    let link = getLink(iframeElement);
+    showAlert(link)
+  } else {
+    let link = "";
+    showAlert(link)
+  }
+}
 
-    let abrirNoYoutube = confirm("Link:    " + link + "\n\nAbrir no youtube? ");
-    if (abrirNoYoutube){
+
+
+function getLink(iframeElement){
+  let srcIframe = iframeElement.src;
+  let linkEmbed = srcIframe.split("?")[0];
+  return linkEmbed.replace(
+    "https://www.youtube.com/embed/",
+    "https://youtu.be/"
+  );
+}
+
+
+
+function showAlert(link){
+  if(link !== ""){
+    let result = confirm("Link:    " + link + "\n\nAbrir no youtube? ");
+    if (result){
       window.open(link, "_black");
     }
-    
-  } else {
+  }else{
     alert("\nNÃO FOI POSSÍVEL OBTER LINK!\n\nPOSSÍVEIS CAUSAS\n  - Não reproduziu o video\n  - Não é um video do Youtube");
-  }
+  } 
 }
