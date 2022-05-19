@@ -31,7 +31,7 @@ Após ativar o modo desenvolvedor irá aparecer os icones
 
 ## Como utilizar
 1. Após adicionar a extensão, atualize a página da DIO
-2. Acesse um vídeo de **Curso** ou **Desafio de projeto** e aguarde aparecer o botão **"Assistir no Youtube"** no canto superior direito do vídeo
+2. Acesse um vídeo de **Curso**, **Desafio de projeto** ou **lives** e aguarde aparecer o botão **"Assistir no Youtube"** no canto superior direito do vídeo
 4. Clique para reproduzir o vídeo na plataforma da DIO, aguarde até iniciar a reprodução e depois clique em "Assitir no Youtube"
 
 **Obs: Para que a extensão consiga obter o link do video, é obrigátorio iniciar o vídeo na plataforma da DIO**
